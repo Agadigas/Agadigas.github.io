@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>xyz — Developer Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap">
+<style>
+:root{--base:#eff1f5;--mantle:#e6e9ef;--line:#ccd0da;--muted:#7c7f93;--sub:#5c5f77;--text:#4c4f69;--pink:#ea76cb;--mauve:#8839ef;--blue:#1e66f5;--green:#40a02b;--yellow:#df8e1d;--peach:#fe640b;--red:#d20f39;--teal:#179299;--track:#dce0e8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--base:#1e1e2e;--mantle:#181825;--line:#313244;--muted:#6c7086;--sub:#a6adc8;--text:#cdd6f4;--pink:#f5c2e7;--mauve:#cba6f7;--blue:#89b4fa;--green:#a6e3a1;--yellow:#f9e2af;--peach:#fab387;--red:#f38ba8;--teal:#94e2d5;--track:#313244;color-scheme:dark}}
+:root[data-theme="dark"]{--base:#1e1e2e;--mantle:#181825;--line:#313244;--muted:#6c7086;--sub:#a6adc8;--text:#cdd6f4;--pink:#f5c2e7;--mauve:#cba6f7;--blue:#89b4fa;--green:#a6e3a1;--yellow:#f9e2af;--peach:#fab387;--red:#f38ba8;--teal:#94e2d5;--track:#313244;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--base);color:var(--text);font:14px/1.65 'JetBrains Mono','SFMono-Regular',Menlo,Consolas,'Liberation Mono',monospace;padding:clamp(12px,4vw,40px)}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+.win{max-width:880px;margin:0 auto;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--base)}
+.top{display:flex;align-items:center;gap:8px;padding:11px 16px;background:var(--mantle);border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}
+.top i{width:12px;height:12px;border-radius:50%}
+.top span{flex:1;text-align:center;margin-right:52px}
+.body{padding:clamp(16px,4vw,32px)}
+section{margin-bottom:40px}
+.ps{margin:0 0 14px;font-size:14px;font-weight:400}
+.ps b{color:var(--green);font-weight:400}.ps em{color:var(--blue);font-style:normal}.ps s{color:var(--muted);text-decoration:none}
+h1{margin:0;font-size:clamp(40px,10vw,72px);line-height:1.1;letter-spacing:-1px;background:linear-gradient(90deg,var(--pink),var(--mauve),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{margin:6px 0 14px;color:var(--mauve);font-weight:700}
+.lead{max-width:56ch;margin:0 0 20px;color:var(--sub)}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.cta a{padding:7px 16px;border:1px solid var(--line);border-radius:999px;background:var(--mantle);color:var(--text)}
+.cta a:first-child{border-color:var(--mauve);color:var(--mauve);font-weight:700}
+.cta a:hover{text-decoration:none;border-color:var(--blue)}
+.panel{border:1px solid var(--line);border-radius:10px;background:var(--mantle);padding:18px 20px}
+.info{display:grid;grid-template-columns:10rem 1fr;gap:4px 12px;margin:0}
+.info dt{font-weight:700;color:var(--blue)}
+.info dd{margin:0;color:var(--text)}
+.skills{list-style:none;margin:0;padding:0}
+.skills li{display:grid;grid-template-columns:minmax(0,1.2fr) 7rem 3.4rem minmax(0,1.4fr);gap:12px;align-items:center;padding:7px 4px;border-radius:6px}
+.skills li:first-child{background:color-mix(in srgb,var(--line) 55%,transparent)}
+.skills .cmd{color:var(--sub);overflow-wrap:anywhere}
+.skills li:first-child .cmd{color:var(--text);font-weight:700}
+.meter{display:block;height:6px;border-radius:3px;background:var(--track)}
+.meter i{display:block;height:100%;width:var(--w);background:var(--c);border-radius:3px}
+.skills b{color:var(--c);text-align:right}
+.skills .sk{color:var(--sub)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.card{border:1px solid var(--line);border-left:3px solid var(--c);border-radius:10px;background:var(--mantle);padding:14px 16px}
+.card h3{margin:0 0 2px;font-size:15px;color:var(--c)}
+.card h3 a{color:inherit}
+.card p{margin:0;color:var(--sub)}
+.card .tech{margin-top:8px;font-size:12px;color:var(--muted)}
+.badge{float:right;font-size:11px;padding:1px 9px;border-radius:999px;border:1px solid currentColor}
+.done{color:var(--green)}.wip{color:var(--yellow)}.planned{color:var(--muted)}
+.links a{display:inline-block;margin-right:18px}
+footer{color:var(--muted);font-style:italic;font-size:13px}
+@media (max-width:620px){
+.info{grid-template-columns:1fr;gap:0}.info dd{margin-bottom:10px}
+.skills li{grid-template-columns:1fr auto;gap:2px 12px;padding:9px 4px}
+.skills .meter{grid-column:1/-1;order:3}.skills .sk{grid-column:1/-1;order:4;font-size:12px}
+}
+</style>
+</head>
+<body>
+<main class="win">
+<div class="top"><i style="background:var(--red)"></i><i style="background:var(--yellow)"></i><i style="background:var(--green)"></i><span>xyz@dev-lab: ~</span></div>
+<div class="body">
+
+<section>
+<h2 class="ps"><b>xyz@dev</b><s>:</s><em>~</em><s>$</s> whoami</h2>
+<h1>xyz</h1>
+<p class="role">Developer · Programmer</p>
+<p class="lead">I build game clients, mods and tools in Java, C++ and Python, mostly around Minecraft and DDNet.</p>
+<div class="cta"><a href="https://github.com/Agadigas">GitHub</a><a href="#projects">Projects</a><a href="#skills">Skills</a></div>
+</section>
+
+<section id="about">
+<h2 class="ps"><b>xyz@dev</b><s>:</s><em>~</em><s>$</s> neofetch</h2>
+<div class="panel"><dl class="info">
+<dt>OS</dt><dd>Arch Linux</dd>
+<dt>Role</dt><dd>Developer · Programmer</dd>
+<dt style="color:var(--peach)">Primary</dt><dd>Java · C++ · Python</dd>
+<dt style="color:var(--green)">Minecraft</dt><dd>Bukkit · Paper · Fabric · NeoForge</dd>
+<dt style="color:var(--red)">Systems</dt><dd>C++ · Dear ImGui · Unreal Engine</dd>
+<dt style="color:var(--teal)">Tooling</dt><dd>Git · GitHub</dd>
+<dt style="color:var(--muted)">Location</dt><dd>Brazil</dd>
+<dt style="color:var(--muted)">Uptime</dt><dd>7y 143d</dd>
+<dt style="color:var(--muted)">Swap</dt><dd>“coffee” cache</dd>
+<dt style="color:var(--red)">Popular Commits</dt><dd style="color:var(--red)">Added bugs to fix later</dd>
+</dl></div>
+</section>
+
+<section id="skills">
+<h2 class="ps"><b>xyz@dev</b><s>:</s><em>~</em><s>$</s> top -o %CPU -u xyz</h2>
+<div class="panel"><ul class="skills">
+<li style="--c:var(--peach);--w:95%"><span class="cmd">java -jar paper.jar</span><span class="meter"><i></i></span><b>95.0</b><span class="sk">Java · Paper · Bukkit</span></li>
+<li style="--c:var(--yellow);--w:90%"><span class="cmd">./gradlew build</span><span class="meter"><i></i></span><b>90.0</b><span class="sk">Java · Fabric · NeoForge</span></li>
+<li style="--c:var(--red);--w:82%"><span class="cmd">cmake --build .</span><span class="meter"><i></i></span><b>82.0</b><span class="sk">C++ · Dear ImGui · Unreal</span></li>
+<li style="--c:var(--green);--w:75%"><span class="cmd">python main.py</span><span class="meter"><i></i></span><b>75.0</b><span class="sk">Python · Scripting</span></li>
+<li style="--c:var(--blue);--w:65%"><span class="cmd">git push origin main</span><span class="meter"><i></i></span><b>65.0</b><span class="sk">Git · GitHub</span></li>
+</ul></div>
+</section>
+
+<section id="projects">
+<h2 class="ps"><b>xyz@dev</b><s>:</s><em>~</em><s>$</s> git log --graph ~/projects</h2>
+<div class="cards">
+<article class="card" style="--c:var(--teal)"><span class="badge done">done</span><h3>Electron Client</h3><p>DDNet Client</p><p class="tech">C++ · ImGui</p></article>
+<article class="card" style="--c:var(--mauve)"><span class="badge done">done</span><h3>Amethyst Client</h3><p>Minecraft Client</p><p class="tech">Java</p></article>
+<article class="card" style="--c:var(--red)"><span class="badge wip">wip</span><h3>Failed Protocol</h3><p>Minecraft Horror Mod</p><p class="tech">Java</p></article>
+<article class="card" style="--c:var(--peach)"><span class="badge done">done</span><h3><a href="https://github.com/Agadigas/reap">REAP</a></h3><p>Window Management Tool</p><p class="tech">Rust · Python</p></article>
+<article class="card" style="--c:var(--blue)"><span class="badge planned">planned</span><h3>Fluxa</h3><p>In planning</p></article>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="ps"><b>xyz@dev</b><s>:</s><em>~</em><s>$</s> cat links.txt</h2>
+<p class="links"><a href="https://github.com/Agadigas">github.com/Agadigas</a></p>
+</section>
+
+<footer># Building things, one commit at a time.</footer>
+</div>
+</main>
+</body>
+</html>
