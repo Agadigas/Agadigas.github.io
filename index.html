@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>xyz · Developer portfolio</title>
+<title>xyz dev Portfolio</title>
 <meta name="description" content="Developer portfolio of xyz: Minecraft mods, DDNet clients and tools in Java, C++, Rust and Python. Contact: Discord xyz.dev_">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;700&display=swap">
@@ -107,7 +107,7 @@ h2 span{background:linear-gradient(100deg,var(--a1),var(--a2),var(--a3),var(--a1
 @media(max-width:640px){.row{grid-template-columns:1fr auto;grid-template-areas:"cmd pct" "bar bar" "tags tags";gap:8px 12px}}
 /* projects */
 .grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}
-.card{position:relative;grid-column:span 2;min-height:240px;display:flex;flex-direction:column;gap:6px;padding:26px;border:1px solid var(--line);border-radius:30px;background:var(--glass);backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);overflow:hidden;box-shadow:inset 0 1px 0 #fff3;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s,border-color .3s;will-change:transform}
+.card{position:relative;grid-column:span 3;min-height:240px;display:flex;flex-direction:column;gap:6px;padding:26px;border:1px solid var(--line);border-radius:30px;background:var(--glass);backdrop-filter:blur(22px) saturate(1.5);-webkit-backdrop-filter:blur(22px) saturate(1.5);overflow:hidden;box-shadow:inset 0 1px 0 #fff3;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s,border-color .3s;will-change:transform}
 .card:nth-child(-n+2){grid-column:span 3;min-height:310px}
 .card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),#fff4,transparent 60%),radial-gradient(520px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--c) 42%,transparent),transparent 62%)}
 .card::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;pointer-events:none;opacity:0;transition:opacity .3s;background:conic-gradient(from var(--ang),var(--c),transparent 30%,var(--a3),transparent 70%,var(--c));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 4s linear infinite}
@@ -122,6 +122,15 @@ h2 span{background:linear-gradient(100deg,var(--a1),var(--a2),var(--a3),var(--a1
 .arr{position:absolute;right:22px;top:22px;width:22px;height:22px;color:var(--c);transition:transform .3s}.card:hover .arr{transform:translate(4px,-4px)}
 @media(min-width:861px){.card.wide{grid-column:span 6;min-height:210px}.card.wide h3{font-size:clamp(30px,5vw,56px)}}
 @media(max-width:860px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card,.card:nth-child(-n+2){grid-column:span 2;min-height:210px}}
+/* why + marquee 2 */
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.why .card,.why .card:nth-child(-n+2){grid-column:auto;min-height:0;gap:0}
+.why .card h3,.why .card:nth-child(-n+2) h3{margin:0 0 12px;padding:0;font-size:clamp(26px,3.2vw,40px);line-height:1.02}
+.why .card p{font-size:17px;line-height:1.5}
+.why .card .n{font:700 12px var(--mono);letter-spacing:.08em;color:var(--mut);margin-bottom:34px}
+@media(max-width:860px){.why{grid-template-columns:1fr}}
+.mq.r{transform:rotate(1.2deg);margin-top:20px}.mq.r .tr{animation-direction:reverse;animation-duration:26s}
+.mq.r li{-webkit-text-stroke:0;background:linear-gradient(100deg,var(--a1),var(--a2),var(--a3));-webkit-background-clip:text;background-clip:text}
 /* contact */
 .contact{overflow:hidden}.contact h2{font-size:clamp(40px,9.5vw,118px);margin-bottom:26px}
 .lead2{margin:0 0 22px;max-width:46ch;font:500 clamp(17px,2.2vw,22px)/1.4 var(--body);color:var(--mut)}
@@ -158,7 +167,7 @@ footer{padding-block:34px 8px;font:400 13px var(--mono);color:var(--mut);display
 <p class="lead">I build <em>game clients, mods and tools</em> in Java, C++ and Python, mostly around Minecraft and DDNet.</p>
 <div class="cta"><a class="btn pri" href="https://github.com/Agadigas">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
 <button class="btn" type="button" data-copy="xyz.dev_"><svg class="ic" aria-hidden="true"><use href="#dc"/></svg>Discord · xyz.dev_</button><a class="btn" href="#projects">See projects</a></div>
-<div class="facts"><div><b>7y</b><span>Uptime</span></div><div><b>6</b><span>Projects</span></div><div><b>32+</b><span>Prototypes</span></div><div><b>54+</b><span>Training prototypes</span></div><div><b>4</b><span>Languages</span></div><div><b>Arch</b><span>Daily driver</span></div></div>
+<div class="facts"><div><b>7y</b><span>Uptime</span></div><div><b>7</b><span>Projects</span></div><div><b>32+</b><span>Prototypes</span></div><div><b>54+</b><span>Training prototypes</span></div><div><b>4</b><span>Languages</span></div><div><b>Arch</b><span>Daily driver</span></div></div>
 </div></main></div>
 <div class="mq" aria-hidden="true"><div class="tr" id="tr">
 <ul><li>Java</li><li>C++</li><li>Rust</li><li>Python</li><li>Paper</li><li>Fabric</li><li>NeoForge</li><li>Dear ImGui</li><li>Unreal Engine</li></ul>
@@ -171,6 +180,12 @@ footer{padding-block:34px 8px;font:400 13px var(--mono);color:var(--mut);display
 <p class="ps"><b>xyz@dev</b>:~$ neofetch</p><dl>
 <dt>OS</dt><dd>Arch Linux</dd><dt>Role</dt><dd>Developer · Programmer</dd><dt style="--c:var(--amber)">Primary</dt><dd>Java · C++ · Python</dd><dt style="--c:var(--lime)">Minecraft</dt><dd>Bukkit · Paper · Fabric · NeoForge</dd><dt style="--c:var(--a1)">Systems</dt><dd>C++ · Dear ImGui · Unreal Engine</dd><dt style="--c:var(--a3)">Tooling</dt><dd>Git · GitHub</dd><dt style="--c:var(--mut)">Location</dt><dd>Brazil</dd><dt style="--c:var(--mut)">Uptime</dt><dd>7y 143d</dd><dt style="--c:var(--mut)">Swap</dt><dd>“coffee” cache</dd><dt style="--c:var(--a1)">Popular commits</dt><dd style="color:var(--a1)">Added bugs to fix later</dd></dl>
 <p class="ps" style="margin:10px 0 0"><b>xyz@dev</b>:~$ <span class="cur2"></span></p></div></div></section>
+<section id="why"><p class="kick">What you get</p><h2>Idea to <span>prototype, fast</span></h2>
+<div class="why">
+<article class="card" style="--c:var(--a1)"><span class="n">Speed</span><h3>32+ prototypes</h3><p>I prototype first and polish after. 32+ finished prototypes and 54+ training builds behind me, so you see something working early.</p></article>
+<article class="card" style="--c:var(--a3)"><span class="n">Stack</span><h3>Game-native tools</h3><p>Minecraft on Paper, Fabric and NeoForge, C++ clients with Dear ImGui, Unreal Engine. The tools your project needs are already in my hands.</p></article>
+<article class="card" style="--c:var(--lime)"><span class="n">Contact</span><h3>One DM away</h3><p>No agency in between. Message me on Discord and talk straight to the person writing the code.</p></article>
+</div></section>
 <section id="skills"><p class="kick">Stack</p><h2>Running at <span>full CPU</span></h2>
 <div class="panel sk">
 <div class="row" style="--c:var(--amber);--w:95%"><span class="cmd">java -jar paper.jar</span><span class="meter"><i></i></span><b>95</b><span class="tags">Java · Paper · Bukkit</span></div>
@@ -182,10 +197,14 @@ footer{padding-block:34px 8px;font:400 13px var(--mono);color:var(--mut);display
 <div class="grid">
 <article class="card" style="--c:var(--a3)"><span class="badge done">done</span><h3>Electron Client</h3><p>DDNet Client</p><p class="tech">C++ · ImGui</p></article>
 <article class="card" style="--c:var(--a2)"><span class="badge done">done</span><h3>Amethyst Client</h3><p>Minecraft Client</p><p class="tech">Java</p></article>
+<article class="card" style="--c:var(--a3)"><span class="badge wip">wip</span><h3>TON Client</h3><p>Minecraft Modern Server Tooling Client</p><p class="tech">Java</p></article>
 <article class="card" style="--c:var(--a1)"><span class="badge wip">wip</span><h3>Failed Protocol</h3><p>Minecraft Horror Mod</p><p class="tech">Java</p></article>
 <a class="card" href="https://github.com/Agadigas/reap" style="--c:var(--amber)"><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="badge done">done</span><h3>REAP</h3><p>Window Management Tool</p><p class="tech">Rust · Python</p></a>
 <article class="card" style="--c:var(--lime)"><span class="badge planned">planned</span><h3>Fluxa</h3><p>In planning</p></article>
 <article class="card wide" style="--c:var(--amber)"><span class="badge wip">wip</span><h3>Open Backrooms</h3><p>Realistic Backrooms Game</p><p class="tech">Unreal Engine · C++</p></article></div></section>
+<div class="mq r" aria-hidden="true"><div class="tr">
+<ul><li>Open to work</li><li>Minecraft mods</li><li>Game clients</li><li>Server tooling</li><li>Fast prototypes</li></ul>
+<ul><li>Open to work</li><li>Minecraft mods</li><li>Game clients</li><li>Server tooling</li><li>Fast prototypes</li></ul></div></div>
 <section id="contact"><div class="panel contact"><p class="kick">Contact</p><h2>Let’s build <span>something</span></h2>
 <p class="lead2">Got a Minecraft mod, plugin, game client or tool in mind? Hit me up on Discord, it’s the fastest way to reach me.</p>
 <div class="dcard"><div class="dav"><svg class="ic" aria-hidden="true"><use href="#dc"/></svg></div><div class="dtx"><span>Discord</span><b>xyz.dev_</b></div>
