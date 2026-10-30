@@ -1,5 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>xyz dev Portfolio</title>
+<meta property="og:title" content="xyz dev Portfolio"><meta property="og:description" content="Minecraft mods, game clients and tools in Java, C++, Rust and Python. Contact: Discord xyz.dev_"><meta property="og:type" content="website"><meta name="theme-color" content="#06050c">
 <meta name="description" content="Developer portfolio of xyz: Minecraft mods, DDNet clients and tools in Java, C++, Rust and Python. Contact: Discord xyz.dev_">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=JetBrains+Mono:wght@400;700&display=swap">
@@ -122,6 +123,32 @@ h2 span{background:linear-gradient(100deg,var(--a1),var(--a2),var(--a3),var(--a1
 .arr{position:absolute;right:22px;top:22px;width:22px;height:22px;color:var(--c);transition:transform .3s}.card:hover .arr{transform:translate(4px,-4px)}
 @media(min-width:861px){.card.wide{grid-column:span 6;min-height:210px}.card.wide h3{font-size:clamp(30px,5vw,56px)}}
 @media(max-width:860px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.card,.card:nth-child(-n+2){grid-column:span 2;min-height:210px}}
+/* project visuals */
+.viz{position:absolute;right:24px;top:22px;width:clamp(78px,30%,132px);height:62px;display:flex;pointer-events:none}
+.arr~.viz{right:58px}
+.v-sl{flex-direction:column;justify-content:center;gap:9px}
+.v-sl i{position:relative;height:9px;border-radius:9px;background:var(--line);overflow:hidden}
+.v-sl i::after{content:"";position:absolute;inset:0;border-radius:inherit;background:var(--c);transform-origin:left;animation:sl 3s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-1s)}
+@keyframes sl{from{transform:scaleX(.12)}to{transform:scaleX(.95)}}
+.v-bar{gap:6px;align-items:flex-end}
+.v-bar i{flex:1;height:100%;border-radius:6px 6px 2px 2px;background:linear-gradient(var(--c),transparent);transform-origin:bottom;animation:eq 2.2s ease-in-out infinite;animation-delay:calc(var(--i)*-.45s)}
+@keyframes eq{50%{transform:scaleY(.3)}}
+.v-gem{justify-content:flex-end;align-items:center}
+.v-gem i{width:44px;height:44px;margin-right:10px;border-radius:10px;background:linear-gradient(135deg,#fffa,var(--c) 45%,var(--a1));box-shadow:0 0 34px var(--c);animation:gem 7s ease-in-out infinite}
+@keyframes gem{0%,100%{transform:rotate(45deg) scale(1)}50%{transform:rotate(225deg) scale(1.15)}}
+.v-eye{justify-content:flex-end;align-items:center;gap:14px}
+.v-eye i{width:15px;height:15px;border-radius:50%;background:var(--c);box-shadow:0 0 22px 4px var(--c);animation:fl 4s infinite}
+@keyframes fl{0%,88%,100%{opacity:1}91%{opacity:.08}94%{opacity:.8}97%{opacity:.15}}
+.v-win{display:grid;grid-template:1fr 1fr/1fr 1fr;gap:5px;animation:tile 5s ease-in-out infinite}
+.v-win i{border:1.5px solid var(--c);border-radius:6px;background:color-mix(in srgb,var(--c) 18%,transparent)}
+.v-win i:first-child{grid-row:span 2}
+@keyframes tile{50%{grid-template-columns:2.2fr 1fr}}
+.v-flow svg{width:100%;height:100%;overflow:visible}
+.v-flow path{fill:none;stroke:var(--c);stroke-width:3;stroke-linecap:round;stroke-dasharray:40 20;animation:dash 2.4s linear infinite;filter:drop-shadow(0 0 6px var(--c))}
+@keyframes dash{to{stroke-dashoffset:-120}}
+.v-hall{width:64px}
+.v-hall i{position:absolute;inset:0;border:1.5px solid var(--c);animation:hall 3s linear infinite;animation-delay:calc(var(--i)*-.75s)}
+@keyframes hall{from{transform:scale(.08);opacity:0}25%{opacity:1}to{transform:scale(1.3);opacity:0}}
 /* why + marquee 2 */
 .why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .why .card,.why .card:nth-child(-n+2){grid-column:auto;min-height:0;gap:0}
@@ -195,13 +222,13 @@ footer{padding-block:34px 8px;font:400 13px var(--mono);color:var(--mut);display
 <div class="row" style="--c:var(--a3);--w:65%"><span class="cmd">git push origin main</span><span class="meter"><i></i></span><b>65</b><span class="tags">Git · GitHub</span></div></div></section>
 <section id="projects"><p class="kick">Projects</p><h2>Things I <span>shipped</span></h2>
 <div class="grid">
-<article class="card" style="--c:var(--a3)"><span class="badge done">done</span><h3>Electron Client</h3><p>DDNet Client</p><p class="tech">C++ · ImGui</p></article>
-<article class="card" style="--c:var(--a2)"><span class="badge done">done</span><h3>Amethyst Client</h3><p>Minecraft Client</p><p class="tech">Java</p></article>
-<article class="card" style="--c:var(--a3)"><span class="badge wip">wip</span><h3>TON Client</h3><p>Minecraft Modern Server Tooling Client</p><p class="tech">Java</p></article>
-<article class="card" style="--c:var(--a1)"><span class="badge wip">wip</span><h3>Failed Protocol</h3><p>Minecraft Horror Mod</p><p class="tech">Java</p></article>
-<a class="card" href="https://github.com/Agadigas/reap" style="--c:var(--amber)"><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="badge done">done</span><h3>REAP</h3><p>Window Management Tool</p><p class="tech">Rust · Python</p></a>
-<article class="card" style="--c:var(--lime)"><span class="badge planned">planned</span><h3>Fluxa</h3><p>In planning</p></article>
-<article class="card wide" style="--c:var(--amber)"><span class="badge wip">wip</span><h3>Open Backrooms</h3><p>Realistic Backrooms Game</p><p class="tech">Unreal Engine · C++</p></article></div></section>
+<article class="card" style="--c:var(--a3)"><span class="badge done">done</span><div class="viz v-sl" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i></div><h3>Electron Client</h3><p>DDNet Client</p><p class="tech">C++ · ImGui</p></article>
+<article class="card" style="--c:var(--a2)"><span class="badge done">done</span><div class="viz v-gem" aria-hidden="true"><i></i></div><h3>Amethyst Client</h3><p>Minecraft Client</p><p class="tech">Java</p></article>
+<article class="card" style="--c:var(--a3)"><span class="badge wip">wip</span><div class="viz v-bar" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i><i style="--i:4"></i></div><h3>TON Client</h3><p>Minecraft Modern Server Tooling Client</p><p class="tech">Java</p></article>
+<article class="card" style="--c:var(--a1)"><span class="badge wip">wip</span><div class="viz v-eye" aria-hidden="true"><i></i><i></i></div><h3>Failed Protocol</h3><p>Minecraft Horror Mod</p><p class="tech">Java</p></article>
+<a class="card" href="https://github.com/Agadigas/reap" style="--c:var(--amber)"><svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg><span class="badge done">done</span><div class="viz v-win" aria-hidden="true"><i></i><i></i><i></i></div><h3>REAP</h3><p>Window Management Tool</p><p class="tech">Rust · Python</p></a>
+<article class="card" style="--c:var(--lime)"><span class="badge planned">planned</span><div class="viz v-flow" aria-hidden="true"><svg viewBox="0 0 100 62"><path d="M0 31C18 4 32 58 50 31S82 4 100 31"/></svg></div><h3>Fluxa</h3><p>In planning</p></article>
+<article class="card wide" style="--c:var(--amber)"><span class="badge wip">wip</span><div class="viz v-hall" aria-hidden="true"><i style="--i:0"></i><i style="--i:1"></i><i style="--i:2"></i><i style="--i:3"></i></div><h3>Open Backrooms</h3><p>Realistic Backrooms Game</p><p class="tech">Unreal Engine · C++</p></article></div></section>
 <div class="mq r" aria-hidden="true"><div class="tr">
 <ul><li>Open to work</li><li>Minecraft mods</li><li>Game clients</li><li>Server tooling</li><li>Fast prototypes</li></ul>
 <ul><li>Open to work</li><li>Minecraft mods</li><li>Game clients</li><li>Server tooling</li><li>Fast prototypes</li></ul></div></div>
@@ -260,7 +287,7 @@ var fs='precision mediump float;uniform vec2 r;uniform float t,k,sc;uniform vec3
 'float e=.01,a=H(p),bx=H(p+vec2(e,0.)),by=H(p+vec2(0.,e));vec3 nn=normalize(vec3(a-bx,a-by,e*1.6));'+
 'vec3 col=mix(c0,c1,smoothstep(.15,.7,a));col=mix(col,c2,smoothstep(.5,.9,a)*.95);col=mix(col,c3,smoothstep(.4,.05,a)*.75);'+
 'vec3 l=normalize(vec3(-.5,.6,.7));col+=pow(max(dot(nn,l),0.),30.)*.7+pow(1.-nn.z,2.)*.5*c3;'+
-'col+=.07*vec3(sin(a*24.),sin(a*24.+2.1),sin(a*24.+4.2));col=mix(bg,col,k);'+
+'col+=.07*vec3(sin(a*24.),sin(a*24.+2.1),sin(a*24.+4.2));col=mix(col,col.brg,.55*(.5+.5*sin(sc*2.2)));col=mix(bg,col,k);'+
 'col*=1.-.35*dot(p*.4,p*.4);col+=(h(gl_FragCoord.xy+t)-.5)*.025;gl_FragColor=vec4(col,1.);}';
 function sh(ty,s){var o=gl.createShader(ty);gl.shaderSource(o,s);gl.compileShader(o);if(!gl.getShaderParameter(o,gl.COMPILE_STATUS))throw 1;return o}
 var pr=gl.createProgram();gl.attachShader(pr,sh(gl.VERTEX_SHADER,vs));gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(pr);if(!gl.getProgramParameter(pr,gl.LINK_STATUS))throw 1;gl.useProgram(pr);
